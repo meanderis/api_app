@@ -12,7 +12,7 @@ def register():
 
 @app.route('/developer/')
 def developer():
-    return redirect(url_for('developer_apps'))
+    return render_template('developer_home.html')
 
 @app.route('/developer/apps/')
 def developer_apps():
