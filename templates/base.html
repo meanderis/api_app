@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+        {% block head %}
+            <title>{% block title %}{% endblock %} - CoreDial</title>
+            <!-- jQuery -->
+            <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+
+            <!-- jQuery UI -->
+            <script type='text/javascript' src='http://code.jquery.com/ui/1.10.1/jquery-ui.min.js'></script>
+            <link href='http://code.jquery.com/ui/1.10.1/themes/base/minified/jquery-ui.min.css' rel='stylesheet' type='text/css' media='all'>
+            <link href='http://code.jquery.com/ui/1.10.1/themes/smoothness/jquery-ui.min.css' rel='stylesheet' type='text/css' media='all'>
+
+            <!-- jqGrid -->
+            <script type='text/javascript' src='/static/jqGrid/js/jquery.jqGrid.min.js'></script>
+            <script type='text/javascript' src='/static/jqGrid/js/i18n/grid.locale-en.js'></script>
+            <link href='/static/jqGrid/css/ui.jqgrid.css' rel='stylesheet' type='text/css' media='all'>
+
+            <link rel="stylesheet" type="text/css" href="https://jsteele-web.dev.coredial.com/css/voiceaxis_default.css">
+            <!-- <link rel="stylesheet" href="/static/site.css" /> -->
+            {% block style %}{% endblock %}
+            {% block script %}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="subAccountIndicator">
+            <a href="https://jsteele-web.dev.coredial.com/customer">CoreDial, LLC Home</a> » Master Builder Design Services
+        </div>
+
+        <div id="header">
+            <img src="https://jsteele-web.dev.coredial.com/coredial_logo_guitar.html" id="logo" alt="CoreDial, LLC Logo">
+            <div id="headerLinks">
+                Welcome: Administrator User (admin)
+                <ul>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/4/setting/my_profile">My Profile</a> | </li>
+                    <li><a href="https://rheise-web.dev.coredial.com/logout.php">Logout</a> | </li>
+                    <li><a href="javascript:void();return;" onclick="window.open('/help/index.html', 'help', 'width=750,height=550,scrollbars=yes,resizable=yes');">Help</a></li>
+                </ul>
+            </div>
+            <div id="headerAlerts">
+                <ul></ul>
+            </div>
+            <div class="clearing">&nbsp;</div>
+        </div>
+        <div id="mainNavigation">
+            <ul>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/">Home</a></li>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/activity">Activity</a></li>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/voicemail">Voicemail</a></li>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/service" class="selected">Services</a></li>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/case">Cases</a></li>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/accounting">Accounting</a></li>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/report">Reports</a></li>
+                <li><a href="https://rheise-web.dev.coredial.com/customer/4/setting">Settings</a></li>
+            </ul>
+        </div>
+        <div class="clearing">&nbsp;</div>
+            <div id="breadcrumbs">
+                <ul>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/4/">Home</a>&nbsp;»</li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/4/service">Services</a>&nbsp;»</li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/4/service/4">PBX Configuration</a>&nbsp;»</li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/4/service/4/account_details">Account Details</a></li>
+                </ul>
+            </div>
+            <div id="wrapper">
+                <div id="container">
+                    <div id="content">
+                        <div class="pageHeader">API Application</div>
+                        <div class="sectionHeader">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+                <div id="secondaryNavigation">
+                    <div id="secondaryNavTitle"></div>
+                    <select name="createNewMenu" id="createNewMenu" size="1">
+                        <option selected="selected" value="-1">Create New…</option>
+                        <option value="/customer/4/service/4/extension/standard/-1">Extension</option>
+                        <option value="/customer/4/service/4/mailbox/-1">Mailbox</option>
+                        <option value="/customer/4/service/4/aa/-1">Auto Attendant</option>
+                        <option value="/customer/4/service/4/time_frame/-1">Time Frame</option>
+                        <option value="/customer/4/service/4/group/-1">Ring Group</option>
+                        <option value="/customer/4/service/4/conference_bridge/-1">Conference Room</option>
+                        <option value="/customer/4/service/4/call_center/queue/-1">Queue</option>
+                        <option value="/customer/4/service/4/call_center/agent/-1">ACD Agent</option>
+                        <option value="/customer/4/service/4/holiday/-1">Holiday</option>
+                        <option value="/customer/4/service/4/hold_music/track/-1">Hold Music Track</option>
+                        <option value="/customer/4/setting/user/-1">User</option>
+                    </select>
+                    <ul id="submenu">
+                        <li class=" ">
+                            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/pbx_info">Menu Item 1</a>
+                            <div class="submenuChild">
+                                <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/pbx_info/international" class="submenuChild">Sub Menu 1</a><br>
+                            </div>
+                        </li>
+                        <li class="selected ">
+                            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/account_details">Menu Item 2</a>
+                        </li>
+                        <li class=" ">
+                            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number">Menu Item 3</a>
+                            <div class="submenuChild">
+                                <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/standard_phone_number" class="submenuChild">Sub Menu 1</a><br>
+                                  <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/toll_free_phone_number" class="submenuChild">Sub Menu 2</a><br>
+                                  <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/fax_phone_number" class="submenuChild">Hamhock</a><br>
+                            </div>
+                        </li>
+                    </ul>
+                <h1>Recent Items</h1>
+                <ul id="recentItems">
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/4/service/4/extension/standard/-1">Extension #</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/3/service/3/extension/standard/225">Extension #100</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/3/service/3/extension/standard/-1">Extension #</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/5/service/5/call_center/queue/6">Queue 'Sales B'</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/5/service/5/call_center/queue/5">Queue 'Sales'</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/5/service/5/call_center/queue/4">Queue 'IT Support'</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/5/service/5/call_center/queue/new">Queue ''</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/5/service/5/time_frame/5">Time Frame 'Central Time'</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/5/service/5/time_frame/4">Time Frame 'Business Hours'</a></li>
+                    <li><a href="https://rheise-web.dev.coredial.com/customer/5/service/5/time_frame/new">Time Frame ''</a></li>
+                </ul>
+            </div>
+            <div class="clearing">&nbsp;</div>
+        </div>
+        <div id="footer" style="display:block;">
+            Powered&nbsp;By&nbsp;VoiceAxis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version&nbsp;4.bacon&nbsp;</div>
+        </div>
+    </body>
+</html>

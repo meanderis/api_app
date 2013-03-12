@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Welcome to CoreDial{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+        var logmein = function (username)
+        {
+            console.log(username);
+            console.log(username.charAt(0));
+            switch(username.charAt(0))
+            {
+                case 'd':
+                    window.location='/developer/';
+                break;
+                
+                case 'm':
+                    window.location='/msp/';
+                break;
+            }
+        };
+    </script>
+{% endblock %}
+{% block content %}
+    <h1>{{ self.title() }}</h1>
+    <form>
+        <label for="username">User Name: </label><input id="username" name="username" type = "text"/><br/>
+        <label for="password">Password: </label><input id="password" name="password" type = "password"/><br/>
+        <button name="login" type="submit" onClick="javascript: logmein($('#username').val()); return false;">Login</button>
+        <button name="register" type="submit" onClick="javascript: window.location='/register/'; return false;">Register</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}My Applications{% endblock %}
+{% block script %}
+        <script type="text/javascript">
+            $(document).ready
+            (
+                function ()
+                {
+                    console.debug('hi');
+                    var on_select_row = function(id)
+                    {
+                        console.log(id);
+                        window.location='/developer/app/' + id;
+                    };
+
+                    $('#apps_grid').jqGrid
+                    (
+                        {
+                            colNames: ['Application', 'Status'],
+                            colModel:
+                            [
+                                {name:'name', index: 'name', width: 500},
+                                {name:'status', index: 'status', width: 200}
+                            ],
+                            rowNum: 10,
+                            viewrecords: true,
+                            gridview: true,
+                            caption: 'My Applications',
+                            onSelectRow: on_select_row,
+                            pager: '#apps_pager',
+                        }
+                    );
+                    $('#apps_grid').addRowData('1', {name: 'Widget Plugin', status:'Draft'});
+                    $('#apps_grid').addRowData('2', {name: 'Microsoft Exchange Plugin', status:'Conceptual Review'});
+                    $('#apps_grid').addRowData('3', {name: 'Salesforce Plugin', status:'Under Development'});
+                    $('#apps_grid').addRowData('4', {name: 'DataSink Kitchen', status:'Final Review'});
+                    $('#apps_grid').addRowData('5', {name: 'Operator Console', status: 'Published'});
+                    $('#apps_grid').addRowData('6', {name: 'Rotary Phone Dialler', status: 'Rejected'});
+                }
+            );
+        </script>
+{% endblock %}
+{% block content %}
+    <h1>{{ self.title() }}</h1>
+    <table id="apps_grid"></table>
+    <div id="apps_pager"></div> 
+    <button name="new_app" type="submit" onClick="window.location='/developer/app/0'; return false;">Create New App</button>
+    <button name="logout" type="submit" onClick="window.location='/'; return false;">Log Out</button>
+{% endblock %}
