@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% set title = "User Detail" %}
+{% block style %}
+<style type="text/css">
+    .stat { color: #C0C0C0;}
+    .stat_bold { color: #000000; font-weight: bold;}
+</style>
+{% endblock %}
+{% block script %}
+        <script type="text/javascript">
+            $(document).ready
+            (
+                function ()
+                {
+                    console.debug('hi');
+                    $('#msp_comments').prop('readonly', true);
+                    $('#app_key').prop('readonly', true);
+                    {% if app_id == 0 %}
+                        {# New #}
+                        $('#app_status').val('Draft');
+                        $('#status_draft').addClass('stat_bold');
+                        $('#app_name').val('');
+                        $('#app_desc').val('');
+                        $('#app_key').val('');
+                        $('#msp_comments').val('');
+                        $('#conf_grid').hide();
+                    {% elif app_id == 1 %}
+                        {# Draft #}
+                        $('#app_status').val('Draft');
+                        $('#status_draft').addClass('stat_bold');
+                        $('#app_key').val('');
+                        $('#msp_comments').val('');
+                        $('#conf_grid').hide();
+                    {% elif app_id == 2 %}
+                        {# Conceptual Review #}
+                        $('#app_status').val('Conceptual Review');
+                        $('#status_concept').addClass('stat_bold');
+                        $('#app_key').val('');
+                        $('#msp_comments').val('');
+                        $('#conf_grid').hide();
+                        $('#draft_button').attr('disabled', true);
+                        $('#review_button').attr('disabled', true);
+                        $('#save_button').attr('disabled', true);
+
+                    {% elif app_id == 3 %}
+                        {# Under Development #}
+                        $('#status_develop').addClass('stat_bold');
+                        $('#app_status').val('Under Development');
+                        $('#draft_button').attr('disable', true);
+                        $('#review_button').attr('disable', true);
+                    {% elif app_id == 4 %}
+                        {# Final Review #}
+                        $('#status_final').addClass('stat_bold');
+                        $('#app_status').val('Final Review');
+                        $('#draft_button').hide();
+                        $('#review_button').hide();
+                        $('#save_button').hide();
+                    {% elif app_id == 5 %}
+                        {# Published #}
+                        $('#status_published').addClass('stat_bold');
+                        $('#app_status').val('Published');
+                        $('#review_button').attr('disabled', true);
+                    {% endif %}
+
+                    $('#conf_grid').jqGrid
+                    (
+                        {
+                            colNames: ['Key', 'Default Value'],
+                            colModel:
+                            [
+                                {name:'name', index: 'name', width: 500, editable: true, edittype: 'text'},
+                                {name:'value', index: 'value', width: 200, editable: true, edittype: 'text'},
+                            ],
+                            rowNum: 10,
+                            viewrecords: true,
+                            gridview: true,
+                            caption: 'Configuration',
+                            //onSelectRow: on_select_row,
+                            cellEdit: true,
+                            cellsubmit: 'clientArray',
+                            pager: '#conf_pager',
+                        }
+                    );
+                    $('#conf_grid').addRowData('1', {name: 'logo_url', value:'http://www.coredial.com/images/logo.png'});
+                    $("#conf_grid").navGrid
+                    (
+                        '#conf_pager',
+                        {
+                            view: false,
+                            del: true,
+                            edit: true,
+                        },
+                        {},//edit
+                        {},//add
+                        {},//del
+                        {},//search
+                        {}//view
+                    );
+                }
+            );
+        </script>
+{% endblock %}
+{% block content %}
+            <form>
+                <label for="user_name">User Name: </label><input id="user_name" name="user_name" type="text" value="John Smith"/><br/>
+                <div>
+                        <label for="user_type">User Type: </label>
+                        <select id="user_type"  name="user_type">
+                                <option>Standard</option>
+                                <option>Admin</option>
+                        </select>
+                </div>
+                <button id="back_button" type="submit" onClick="window.location='/developer/users/'; return false;">Back</button>
+                <button id="save_button" type="submit" onClick="window.location='/developer/users/'; return false;">Save</button>
+            </form>
+        </div>
+{% endblock %}
