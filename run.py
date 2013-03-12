@@ -30,6 +30,14 @@ def developer_users():
 def developer_user(user_id=-1):
     return render_template('developer_user_detail.html', user_id=user_id)
 
+@app.route('/developer/settings/')
+def developer_settings():
+    return render_template('developer_settings.html')
+
+@app.route('/developer/support/')
+def developer_support():
+    return render_template('developer_support.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

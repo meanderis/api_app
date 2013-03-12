@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Welcome to CoreDial{% endblock %}
+{% set title = "Welcome to CoreDial" %}
 {% block script %}
     <script type="text/javascript">
         var logmein = function (username)
@@ -20,7 +20,6 @@
     </script>
 {% endblock %}
 {% block content %}
-    <h1>{{ self.title() }}</h1>
     <form>
         <label for="username">User Name: </label><input id="username" name="username" type = "text"/><br/>
         <label for="password">Password: </label><input id="password" name="password" type = "password"/><br/>
