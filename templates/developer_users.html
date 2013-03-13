@@ -40,6 +40,20 @@
             );
         </script>
 {% endblock %}
+{% block secondary_nav %}
+                <div id="secondaryNavigation">
+                    <div id="secondaryNavTitle"></div>
+                    <ul id="submenu">
+                        <li class="selected">
+                            <a href="">Users</a>
+                        </li>
+                        <li class="last">
+                            <a href="groups.html">Groups</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="clearing">&nbsp;</div>
+{% endblock %}
 {% block content %}
     <h1>{{ self.title() }}</h1>
     <table id="users_grid"></table>
