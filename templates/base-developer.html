@@ -45,7 +45,7 @@
                 <li><a href="/developer/apps/">API Applications</a></li>
                 <li><a href="/developer/users/">Users</a></li>
                 <li><a href="/developer/settings/">Settings</a></li>
-                <li><a href="/developer/support/">Help and Docs</a></li>
+                <li><a href="/developer/support/">Support</a></li>
             </ul>
         </div>
         <div class="clearing">&nbsp;</div>
@@ -64,30 +64,29 @@
                     </div>
                 </div>
                 {% block secondary_nav %}
-                <div id="secondaryNavigation">
-                    <div id="secondaryNavTitle"></div>
-                    <ul id="submenu">
-                        <li class=" ">
-                            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/pbx_info">Menu Item 1</a>
-                            <div class="submenuChild">
-                                <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/pbx_info/international" class="submenuChild">Sub Menu 1</a><br>
-                            </div>
-                        </li>
-                        <li class="selected ">
-                            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/account_details">Menu Item 2</a>
-                        </li>
-                        <li class=" ">
-                            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number">Menu Item 3</a>
-                            <div class="submenuChild">
-                                <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/standard_phone_number" class="submenuChild">Sub Menu 1</a><br>
-                                  <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/toll_free_phone_number" class="submenuChild">Sub Menu 2</a><br>
-                                  <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/fax_phone_number" class="submenuChild">Hamhock</a><br>
-                            </div>
-                        </li>
-                    </ul>
+<div id="secondaryNavigation">
+    <div id="secondaryNavTitle"></div>
+    <ul id="submenu">
+        <li class=" ">
+            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/pbx_info">Menu Item 1</a>
+            <div class="submenuChild">
+                <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/pbx_info/international" class="submenuChild">Sub Menu 1</a><br>
             </div>
-            <div class="clearing">&nbsp;</div>
-            {% endblock %}
+        </li>
+        <li class="selected ">
+            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/account_details">Menu Item 2</a>
+        </li>
+        <li class="last ">
+            <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number">Menu Item 3</a>
+            <div class="submenuChild">
+                <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/standard_phone_number" class="submenuChild">Sub Menu 1</a><br>
+                <a href="https://rheise-web.dev.coredial.com/customer/4/service/4/phone_number/toll_free_phone_number" class="submenuChild">Sub Menu 2</a><br>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="clearing">&nbsp;</div>
+{% endblock %}
         </div>
         <div id="footer" style="display:block;">
             Powered&nbsp;By&nbsp;VoiceAxis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version&nbsp;4.bacon&nbsp;</div>
