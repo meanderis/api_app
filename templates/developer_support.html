@@ -1,5 +1,5 @@
 {% extends "base-developer.html" %}
-{% set title = "Help and Documentation" %}
+{% set title = "Support" %}
 {% block script %}
 {% endblock %}
 {% block content %}
@@ -12,4 +12,28 @@
 <p>Epazote tomatillo pea sprouts taro chickpea bell pepper squash turnip melon courgette turnip greens parsnip. Yarrow desert raisin melon turnip greens garbanzo radicchio kohlrabi salsify. Jícama peanut winter purslane wattle seed sierra leone bologi garlic parsley tomato artichoke swiss chard bok choy zucchini.</p>
 <p>Seakale earthnut pea cress salsify watercress potato tomatillo silver beet burdock. Broccoli salad garbanzo salsify daikon welsh onion. Taro arugula burdock squash chicory avocado courgette spinach caulie potato grape broccoli chard celtuce turnip greens bamboo shoot asparagus. Wattle seed yarrow potato desert raisin bunya nuts kale. Fennel caulie dandelion parsnip endive cabbage.</p>
 
+{% endblock %}
+{% block secondary_nav %}
+<div id="secondaryNavigation">
+    <div id="secondaryNavTitle"></div>
+    <ul id="submenu">
+        <li class=" ">
+            <a href="docs">Documentation</a>
+            <div class="submenuChild">
+                <a href="download" class="submenuChild">Download</a><br>
+            </div>
+        </li>
+        <li class="selected ">
+            <a href="wiki">Wiki</a>
+        </li>
+        <li class="last ">
+            <a href="Forum">Forum</a>
+            <div class="submenuChild">
+                <a href="forum/support" class="submenuChild">Support</a><br>
+                <a href="forum/tutorial" class="submenuChild">Tutorials</a><br>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="clearing">&nbsp;</div>
 {% endblock %}
